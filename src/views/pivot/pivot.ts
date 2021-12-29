@@ -46,7 +46,7 @@ export const getTemplate = () => `<main class="main">
             <td class="table__cell">Renault</td>
           </tr>
           <tr class="table__row table__row--blue">
-            <td class="table__cell">Mersedes-Benz</td>
+            <td class="table__cell">Mercedes-Benz</td>
           </tr>
           <tr class="table__row table__row--blue">
             <td class="table__cell">Mitsubishi</td>
