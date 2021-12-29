@@ -1,18 +1,18 @@
 import { KnownLocations } from '../../known-locations';
-import { createElement, nearestAnchor } from '../../utils';
+import { createElement, getValueUnderFlag, nearestAnchor } from '../../utils';
 
-export const getTemplate = () => `<header class="header ">
+export const getTemplate = (current: KnownLocations) => `<header class="header ">
 <div class="container header__wrapper">
   <nav class="main-nav">
     <div class="main-nav__wrapper">
       <ul class="main-nav__list">
         <li class="main-nav__item">
-          <a href="${KnownLocations.logbook}" class="link    ">
+          <a href="${KnownLocations.logbook}" class="link    ${getValueUnderFlag(current===KnownLocations.logbook, 'link--active')}">
             <span>Журнал обслуживания</span>
           </a>
         </li>
         <li class="main-nav__item">
-          <a href="${KnownLocations.pivot}" class="link    link--active">
+          <a href="${KnownLocations.pivot}" class="link    ${getValueUnderFlag(current===KnownLocations.pivot, 'link--active')}">
             <span>Сводная таблица</span>
           </a>
         </li>
@@ -32,11 +32,12 @@ export const getTemplate = () => `<header class="header ">
 
 export interface HeaderProps {
   locationChangeHandler: (location: KnownLocations) => void;
+  current: KnownLocations;
 }
 
 export const getElement = (props: HeaderProps) => {
-  const { locationChangeHandler } = props;
-  const element = createElement(getTemplate());
+  const { current, locationChangeHandler } = props;
+  const element = createElement(getTemplate(current));
   element.addEventListener('click', (evt) => {
     evt.preventDefault();
     const target = nearestAnchor(evt.target);

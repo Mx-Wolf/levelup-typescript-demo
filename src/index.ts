@@ -35,6 +35,7 @@ const main = ((container: HTMLElement | null)=>(location: KnownLocations) => {
     container,
     getHeaderElement({
       locationChangeHandler: getLocationChangeHandler(),
+      current:location,
     }),
   );
 

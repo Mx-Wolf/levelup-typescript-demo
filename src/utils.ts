@@ -29,3 +29,5 @@ export const nearestAnchor = (element: EventTarget | null): HTMLAnchorElement | 
 
   return nearestAnchor(parentElement);
 };
+
+export const getValueUnderFlag = (flag:boolean, value:string):string => flag?value:'';
