@@ -1,3 +1,5 @@
+import { createElement } from '../../utils';
+
 export const getTemplate = ()=>`<main class="main">
 <h1 class="title title--page visually-hidden">Журнал обслуживания</h1>
 <div class="table">
@@ -92,3 +94,5 @@ export const getTemplate = ()=>`<main class="main">
   </button>
 </div>
 </main>`;
+
+export const getElement = ()=>createElement(getTemplate());

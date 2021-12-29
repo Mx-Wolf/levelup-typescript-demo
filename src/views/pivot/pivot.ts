@@ -1,4 +1,6 @@
-export const getTemplate = ()=>`<main class="main">
+import { createElement } from '../../utils';
+
+export const getTemplate = () => `<main class="main">
 <div class="container">
   <h1 class="title title--page visually-hidden">Сводная таблица</h1>
   <a href="#" class="linkmain__setting-link">
@@ -673,3 +675,5 @@ export const getTemplate = ()=>`<main class="main">
   </button>
 </div>
 </main>`;
+
+export const getElement = () => createElement(getTemplate());
